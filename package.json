@@ -12,9 +12,11 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"wp-env": "wp-env"
 	},
 	"devDependencies": {
+		"@wordpress/env": "^5.16.0",
 		"@wordpress/scripts": "^26.2.0"
 	},
 	"volta": {

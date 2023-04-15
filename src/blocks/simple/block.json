@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/wp-splide-simple",
+	"version": "0.1.0",
+	"title": "シンプル",
+	"category": "wp-splide",
+	"icon": "slides",
+	"description": "Example static block scaffolded with Create Block tool.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"mediaId": {
+            "type": "number"
+        },
+        "mediaUrl": {
+            "type": "string",
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "src"
+        },
+		"mediaAlt": {
+			"type": "string",
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "alt"
+		},
+		"mediaCaption": {
+			"type": "string"
+		}
+    },
+	"textdomain": "wp-splide",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
