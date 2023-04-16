@@ -12,7 +12,9 @@
  *
  * @package           create-block
  */
+define( "VERSION", "0.1.0" );
 define( "BUILD_PATH", "/build" );
+define( "ASSETS_PATH", "/build/assets" );
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
@@ -22,16 +24,18 @@ define( "BUILD_PATH", "/build" );
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function create_block_wp_splide_block_init() {
-
 	register_block_type( __DIR__ . BUILD_PATH . "/blocks/simple"  );
 }
 add_action( 'init', 'create_block_wp_splide_block_init' );
 
-add_action( 'admin_enqueue_scripts', function () {
-	// CSS
-	wp_enqueue_style(
-		'custom-admin-css',
-		__DIR__ . '/build/admin.css'
+add_action( 'wp_enqueue_scripts', function () {
+	// Scripts
+	wp_enqueue_script(
+		'wp-splide-js',
+		plugins_url( '' , __FILE__ )  . ASSETS_PATH . '/index.js',
+		array('jquery'),
+		VERSION,
+		true
 	);
 } );
 

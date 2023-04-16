@@ -11,23 +11,53 @@
 		"html": false
 	},
 	"attributes": {
-		"mediaId": {
-            "type": "number"
-        },
-        "mediaUrl": {
+		"type": {
             "type": "string",
-            "source": "attribute",
-            "selector": "img",
-            "attribute": "src"
+			"default": "slide"
         },
-		"mediaAlt": {
-			"type": "string",
-            "source": "attribute",
-            "selector": "img",
-            "attribute": "alt"
+		"rewind": {
+            "type": "boolean",
+			"default": false
+        },
+		"speed": {
+			"type": "number",
+			"defualt": 400
 		},
-		"mediaCaption": {
-			"type": "string"
+		"perPage": {
+			"type": "number",
+			"default": 1
+		},
+		"perMove": {
+			"type": "nubmer",
+			"default": 1
+		},
+		"focus": {
+			"type": "string",
+			"default": "center"
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"pagination": {
+			"type": "boolean",
+			"default": true
+		},
+		"drag": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"interval": {
+			"type": "number",
+			"default": 5000
+		},
+		"updateOnMove": {
+			"type": "boolean",
+			"default": false
 		}
     },
 	"textdomain": "wp-splide",

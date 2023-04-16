@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,9 +30,16 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
+	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps({ orientation: 'horizontal' });
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Wp Splide – hello from the editor!', 'wp-splide' ) }
-		</p>
+		<div {...blockProps}>
+			<section className="splide">
+				<div className="splide__track">
+					<div {...innerBlocksProps} className={`${innerBlocksProps.className} splide__list`} />
+				</div>
+			</section>
+		</div>
 	);
 }

@@ -4,7 +4,8 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, useInnerBlocksProps } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -16,9 +17,15 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save() {
+	const innerBlocksProps = useInnerBlocksProps.save();
+
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Wp Splide – hello from the saved content!' }
-		</p>
+		<div {...useBlockProps.save()}>
+			<section className="splide">
+				<div className="splide__track">
+					<div {...innerBlocksProps} className={`${innerBlocksProps.className} splide__list`} />
+				</div>
+			</section>
+		</div>
 	);
 }
