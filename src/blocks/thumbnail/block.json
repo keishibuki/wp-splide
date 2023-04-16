@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "wp-splide/simple",
+	"name": "wp-splide/thumbnail",
 	"version": "0.1.0",
-	"title": "シンプル",
+	"title": "サムネイル",
 	"category": "wp-splide",
 	"icon": "slides",
 	"description": "Example static block scaffolded with Create Block tool.",

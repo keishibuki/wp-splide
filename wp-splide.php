@@ -25,6 +25,7 @@ define( "ASSETS_PATH", "/build/assets" );
  */
 function create_block_wp_splide_block_init() {
 	register_block_type( __DIR__ . BUILD_PATH . "/blocks/simple"  );
+	register_block_type( __DIR__ . BUILD_PATH . "/blocks/thumbnail"  );
 }
 add_action( 'init', 'create_block_wp_splide_block_init' );
 
