@@ -35,7 +35,7 @@ export default function Edit() {
 
 	return (
 		<div {...blockProps}>
-			<section className="splide">
+			<section id="main-carousel" className="splide">
 				<div className="splide__track">
 					<div {...innerBlocksProps} className={`${innerBlocksProps.className} splide__list`} />
 				</div>

@@ -14,7 +14,7 @@
  */
 define( "VERSION", "0.1.0" );
 define( "BUILD_PATH", "/build" );
-define( "ASSETS_PATH", "/build/assets" );
+define( "ASSETS_PATH", "/assets" );
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
@@ -37,6 +37,13 @@ add_action( 'wp_enqueue_scripts', function () {
 		array('jquery'),
 		VERSION,
 		true
+	);
+	// Styles
+	wp_enqueue_style(
+		'wp-splide-style',
+		plugins_url( '' , __FILE__ )  . ASSETS_PATH . '/index.css',
+		array(),
+		VERSION
 	);
 } );
 
