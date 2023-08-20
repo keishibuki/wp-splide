@@ -11,7 +11,10 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps, ButtonBlockAppender } from '@wordpress/block-editor';
+
+import { Button } from '@wordpress/components';
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,7 +34,12 @@ import './editor.scss';
  */
 export default function Edit() {
 	const blockProps = useBlockProps();
-	const innerBlocksProps = useInnerBlocksProps({ orientation: 'horizontal' });
+	const innerBlocksProps = useInnerBlocksProps(
+		{ orientation: 'horizontal' },
+		{
+			allowedBlocks: ['core/image', 'studio-orange/simple-lightbox-block'],
+		},
+	);
 
 	return (
 		<div {...blockProps}>

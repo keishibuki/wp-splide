@@ -10,11 +10,12 @@
 }
 #main-carousel .splide__track > .splide__list > .splide__slide {
 	width: 100%;
+}
+body:not(.wp-admin) #main-carousel .splide__track > .splide__list > .splide__slide {
 	height: 400px;
 }
-
 @media (width > 575px) {
-	#main-carousel .splide__track > .splide__list > .splide__slide {
+	body:not(.wp-admin) #main-carousel .splide__track > .splide__list > .splide__slide {
 		height: 600px;
 	}
 }

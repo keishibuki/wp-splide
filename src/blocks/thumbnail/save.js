@@ -27,6 +27,16 @@ export default function save() {
 					<div {...innerBlocksProps} className={`${innerBlocksProps.className} splide__list`} />
 				</div>
 			</section>
+
+			<section
+				id="thumbnail-carousel"
+				class="splide"
+				aria-label="サムネイルスライダー。各サムネイルをクリックすると、メインのスライダーが切り替わります"
+			>
+				<div class="splide__track">
+					<div {...innerBlocksProps} className={`${innerBlocksProps.className} splide__list`} />
+				</div>
+			</section>
 		</div>
 	);
 }

@@ -7,9 +7,36 @@
 .splide__list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 5%;
+	flex-direction: column;
+	gap: 16px;
 }
 
-.splide__list > * {
-	max-width: 30%;
+#main-carousel {
+	background: #eee;
+    padding: 16px;
+}
+
+#main-carousel figure img {
+	background: transparent;
+}
+
+#main-carousel .splide__track > .splide__list > .splide__slide {
+	width: 300px;
+	height: 200px;
+	background: #999;
+}
+
+body.wp-admin #main-carousel .splide__track > .splide__list > .splide__slide.wp-block-image .components-resizable-box__container {
+	height: 100% !important;
+}
+
+#main-carousel .button-add {
+	margin-top: 16px;
+	line-height: 1;
+	color: #fff;
+	background: #333;
+}
+
+#main-carousel .button-add:hover {
+	background: #222;
 }
